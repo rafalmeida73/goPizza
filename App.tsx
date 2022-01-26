@@ -1,13 +1,14 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react';
 
 import { useFonts, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
-import { SignIn } from '@screens/SignIn';
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components/native';
 
 import { AuthProvider } from './src/hooks/auth';
+import { Routes } from './src/routes';
 import theme from './src/theme';
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
       <StatusBar style="light" translucent backgroundColor="transparent" />
 
       <AuthProvider>
-        <SignIn />
+        <Routes />
       </AuthProvider>
     </ThemeProvider>
   );
