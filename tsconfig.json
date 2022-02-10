@@ -1,5 +1,4 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
@@ -15,13 +14,12 @@
     "typeRoots": ["node_modules/@types", "./@types", "./src/types"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": "./",
-    "paths": {
-      "@src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@hooks/*": ["./src/hooks/*"],
-    }
-  }
+    "skipLibCheck": false,
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

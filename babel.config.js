@@ -12,13 +12,7 @@ module.exports = function(api) {
             ".tsx",
             ".js",
             ".json"
-          ],
-          alias:{
-            "@components" : "./src/components",
-            "@screens": "./src/screens",
-            "@assets": "./src/assets",
-            "@hooks": "./src/hooks",
-          }
+          ]
         }
     ]
     ]

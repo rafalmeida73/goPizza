@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { ProductProps } from '@src/components/ProduciCard';
 import * as ImagePicker from 'expo-image-picker';
 import { ImageInfo } from 'expo-image-picker/build/ImagePicker.types';
 import { Alert, Platform, View } from 'react-native';
@@ -15,6 +14,7 @@ import { ButtonBack } from '../../components/ButtonBack';
 import { Input } from '../../components/Input';
 import { InputPrice } from '../../components/InputPrice';
 import { Photo } from '../../components/Photo';
+import { ProductProps } from '../../components/ProduciCard';
 
 import {
   Container,

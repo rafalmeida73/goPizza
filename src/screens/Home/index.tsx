@@ -9,6 +9,7 @@ import { useTheme } from 'styled-components/native';
 import happyEmoji from '../../assets/happy.png';
 import { ProduciCard, ProductProps } from '../../components/ProduciCard';
 import { Search } from '../../components/Search';
+import { useAuth } from '../../hooks/auth';
 
 import {
   Container,
@@ -23,6 +24,7 @@ import {
 } from './styles';
 
 export function Home() {
+  const { signOut, user } = useAuth();
   const { COLORS } = useTheme();
   const { navigate } = useNavigation();
 
@@ -62,7 +64,8 @@ export function Home() {
   };
 
   const handleOpen = (id: string) => {
-    navigate('product', { id });
+    const route = user?.isAdmin ? 'product' : 'order';
+    navigate(route, { id });
   };
   const handleAdd = () => {
     navigate('product', {});
@@ -79,9 +82,9 @@ export function Home() {
       <Header>
         <Greeting>
           <GreetingEmoji source={happyEmoji} />
-          <GreetingText>Olá, Admin</GreetingText>
+          <GreetingText>Olá, {user.name}</GreetingText>
         </Greeting>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={signOut}>
           <MaterialIcons name="logout" color={COLORS.TITLE} size={24} />
         </TouchableOpacity>
       </Header>
@@ -111,11 +114,13 @@ export function Home() {
         }}
       />
 
-      <NewProductButton
-        title="Cadastrar Pizza"
-        type="secondary"
-        onPress={handleAdd}
-      />
+      {user?.isAdmin && (
+        <NewProductButton
+          title="Cadastrar Pizza"
+          type="secondary"
+          onPress={handleAdd}
+        />
+      )}
     </Container>
   );
 }

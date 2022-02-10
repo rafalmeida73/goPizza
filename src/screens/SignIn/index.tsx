@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import brandImg from '@assets/brand.png';
-import { Button } from '@components/Button';
-import { Input } from '@components/Input';
-import { useAuth } from '@hooks/auth';
 import { KeyboardAvoidingView, Platform } from 'react-native';
+
+import brandImg from '../../assets/brand.png';
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { useAuth } from '../../hooks/auth';
 
 import {
   Container,

@@ -10,13 +10,8 @@ export function ButtonBack({ ...rest }: TouchableOpacityProps) {
   const { COLORS } = useTheme();
 
   return (
-    <Container>
-      <MaterialIcons
-        {...rest}
-        name="chevron-left"
-        size={18}
-        color={COLORS.TITLE}
-      />
+    <Container {...rest}>
+      <MaterialIcons name="chevron-left" size={18} color={COLORS.TITLE} />
     </Container>
   );
 }
